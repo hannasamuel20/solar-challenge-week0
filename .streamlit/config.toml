@@ -1,0 +1,9 @@
+[server]
+headless = true
+
+[theme]
+base = "light"
+
+[runner]
+# 👇 Tells Streamlit Cloud to treat the repo root as the Python path
+envVars = { PYTHONPATH = "." }
