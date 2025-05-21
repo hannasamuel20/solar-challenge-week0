@@ -1,11 +1,16 @@
 import os
-from scripts import load_data
 import pandas as pd
 
+def load_country_data(filepath, country_name):
+    df = pd.read_csv(filepath)
+    df['Country'] = country_name
+    return df
+
+
 def load_all_data():
-    df_benin = load_data.load_country_data("data/benin_clean.csv", "Benin")
-    df_sierraleone = load_data.load_country_data("data/sierraleone_clean.csv", "Sierra Leone")
-    df_togo = load_data.load_country_data("data/togo_clean.csv", "Togo")
+    df_benin = load_country_data("data/benin_clean.csv", "Benin")
+    df_sierraleone = load_country_data("data/sierraleone_clean.csv", "Sierra Leone")
+    df_togo = load_country_data("data/togo_clean.csv", "Togo")
 
     df_benin = df_benin[df_benin['z_outlier'] == False ]
     df_sierraleone = df_sierraleone[df_sierraleone['z_outlier'] == False ]
