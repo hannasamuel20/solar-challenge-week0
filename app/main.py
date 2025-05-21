@@ -4,6 +4,7 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 
 from utils import load_all_data, compute_summary
+import sys
 
 # Load data
 df_benin,df_sierraleone,df_togo = load_all_data()
